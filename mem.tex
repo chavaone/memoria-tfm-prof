@@ -1,0 +1,198 @@
+\documentclass[a4paper,11pt,twoside,openright]{book}
+
+% codificaci? latin1 y s?bolos del idioma espa?l (? acentos, ...)
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% puede que queramos usar el s?bolo del euro.
+\usepackage{eurosym}
+
+% El paquete fancybox nos permite crear cajas de diferentes estilos con facilidad.
+% http://www.ctan.org/get/macros/latex/contrib/fancybox/fancybox.pdf
+% http://www.mackichan.com/index.html?techtalk/487.htm~mainFrame
+\usepackage{fancybox}
+\usepackage{multicol}
+\usepackage{amsmath}
+
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+\usepackage{apacite}
+
+
+\usepackage{enumitem}% http://ctan.org/pkg/enumitem
+
+\setlist[itemize]{itemsep=0.35em, topsep=0em}
+\setlist[enumerate]{itemsep=0.25em, topsep=0em}
+
+\usepackage[nottoc,numbib]{tocbibind}\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% PARA incluir gr?icos en JPG => compilar con pdflatex.
+\usepackage[pdftex]{graphicx}
+
+\usepackage[pdftex,usenames,dvipsnames]{color}
+
+% Espaciado y ajuste de m?genes
+\usepackage{setspace}
+\doublespacing
+\usepackage{geometry}
+\geometry{
+  inner=3cm,
+  outer=2cm,
+  bottom=3.5cm,
+  top=3.5cm}
+
+\setlength{\belowcaptionskip}{-5pt}
+
+% Paquete fancyhdr -> Para modificar la cabecera y pie de p?inas.
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhf[HR]{\thepage}
+\fancyhf[HL]{\nouppercase\rightmark}
+
+% Package booktabs -> Para mejorar el aspecto de las tablas o cuadros.
+% http://www.ctan.org/tex-archive/macros/latex/contrib/booktabs/
+\usepackage{booktabs}
+
+% Package rotating -> Para poder girar las tablas y dibujarlas a lo largo
+% del folio en vez de a lo ancho.
+\usepackage{rotating}
+
+% Packages multicol y multirow, para manejar tablas de filas y columnas m?ltiples.
+\usepackage{multicol}
+\usepackage{multirow}
+
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+
+ \usepackage{listings}
+ \usepackage{courier}
+ \lstset{
+         basicstyle=\footnotesize\ttfamily, % Standardschrift
+         numberstyle=\tiny,          % Stil der Zeilennummern
+         numbersep=5pt,              % Abstand der Nummern zum Text
+         tabsize=2,                  % Groesse von Tabs
+         extendedchars=true,         %
+         breaklines=true,            % Zeilen werden Umgebrochen
+         keywordstyle=\textbf,
+         frame=b,
+         stringstyle=\textit, % Farbe der String
+         showspaces=false,           % Leerzeichen anzeigen ?
+         showtabs=false,             % Tabs anzeigen ?
+         xleftmargin=17pt,
+         framexleftmargin=17pt,
+         framexrightmargin=5pt,
+         framexbottommargin=4pt,
+         %backgroundcolor=\color{lightgray},
+         showstringspaces=false      % Leerzeichen in Strings anzeigen ?
+ }
+
+ \lstset{literate=
+  {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+  {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+  {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+  {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+  {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+  {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+  {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+  {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+  {€}{{\EUR}}1 {£}{{\pounds}}1
+ }
+\usepackage{titlesec}
+
+\titleformat{\chapter}[display]
+  {\bfseries\Large}
+  {\filright\MakeUppercase{\chaptertitlename} \Huge\thechapter}
+  {1ex}
+  {\titlerule\vspace{0.5ex}\filleft}
+  [\vspace{0.5ex}\titlerule]
+
+\titlespacing*{\chapter}
+{0pt}{0\baselineskip}{1.5\baselineskip}
+\titlespacing*{\section}
+{0pt}{0.75\baselineskip}{0\baselineskip}
+\titlespacing*{\subsection}
+{0pt}{0.5\baselineskip}{0\baselineskip}
+\titlespacing*{\paragraph}
+{0pt}{0.15\baselineskip}{0.6\baselineskip}
+
+\usepackage{pdfpages}
+
+\usepackage{enumitem}
+
+% Personalizamos la separaci? entre p?rafos...
+\parskip=6pt
+
+% Personalizamos el identado en la primera l?ea del nuevo p?rafo...
+\parindent=10pt
+
+% Establecemos el n?mero m?imo de niveles de profundidad en las secciones.
+\setcounter{secnumdepth}{3}
+
+% T?ulo
+\title{Memoria Practicum}
+% Autor
+\author{Marcos Chavarría Teijeiro}
+% Fecha
+\date{\today}
+
+
+\renewcommand\lstlistingname{Fragmento de Código}
+\renewcommand\lstlistlistingname{Fragmentos de Código}
+
+\newenvironment{bottompar}{\par\vspace*{\fill}}{\clearpage}
+
+\begin{document}
+
+        \include{001_portada}
+
+  % FRONTMATTER: TOC, LOF, LOT y descripci?/organizaci? de la memoria.
+        \frontmatter
+
+        \thispagestyle{empty}     % No number page, headings...
+
+        \include{003_cc_licence}
+        \thispagestyle{empty}     % No number page, headings...
+
+        \tableofcontents
+        \listoffigures
+        %\listoftables
+
+
+  % MAINMATTER: El contenido, cap?ulo a cap?ulo, de la memoria del PFC.
+        \mainmatter
+        \include{010_introducion}
+        \include{020_fundamentacion}
+        \include{030_desenvolvemento}
+        \include{040_valoracioneconclusions}
+
+  % INCLUIMOS LOS APÉNDICES...
+        \appendix
+
+  % INCLUIMOS LA BIBLIOGRAFÍA...
+        \nocite{*}  % Se usa para indicar en la bibliograf? las referencias no citadas.
+        \bibliography{mem}
+        \bibliographystyle{apacite}
+
+  % ANEXOS
+        \include{A010_fichas}
+
+\end{document}
+

@@ -1,0 +1,13 @@
+*.aux
+*.toc
+*.sublime-*
+*.log
+*.lot
+*.lof
+mem.pdf
+*~
+#*#
+*.out
+*.blg
+*.bbl
+auto

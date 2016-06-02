@@ -8,4 +8,4 @@ all:
 
 
 clean:
-	rm -f *.blg *.bbl *.toc *.log *.aux *.out *.lof *~  mem.pdf
+	rm -rf auto *.blg *.bbl *.toc *.log *.aux *.out *.lof *~  mem.pdf

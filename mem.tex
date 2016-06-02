@@ -16,6 +16,7 @@
 \usepackage{fancybox}
 \usepackage{multicol}
 \usepackage{amsmath}
+\usepackage{amssymb}
 
 \usepackage{hyperref}
 \usepackage[anythingbreaks]{breakurl}
@@ -124,18 +125,16 @@
   {\titlerule\vspace{0.5ex}\filleft}
   [\vspace{0.5ex}\titlerule]
 
-\titlespacing*{\chapter}
-{0pt}{0\baselineskip}{1.5\baselineskip}
-\titlespacing*{\section}
-{0pt}{0.75\baselineskip}{0\baselineskip}
-\titlespacing*{\subsection}
-{0pt}{0.5\baselineskip}{0\baselineskip}
-\titlespacing*{\paragraph}
-{0pt}{0.15\baselineskip}{0.6\baselineskip}
+\titlespacing*{\chapter}{0pt}{0\baselineskip}{1.5\baselineskip}
+\titlespacing*{\section}{0pt}{0.75\baselineskip}{0\baselineskip}
+\titlespacing*{\subsection}{0pt}{0.5\baselineskip}{0\baselineskip}
+\titlespacing*{\subsubsection}{0pt}{0.4\baselineskip}{0\baselineskip}
+\titlespacing*{\paragraph}{0pt}{0.15\baselineskip}{0.6\baselineskip}
 
 \usepackage{pdfpages}
 \usepackage{enumitem}
- \usepackage{pgfgantt}
+\usepackage{pgfgantt}
+\usetikzlibrary{shapes.misc, positioning}
 
 % Personalizamos la separaci? entre p?rafos...
 \parskip=6pt
@@ -153,12 +152,14 @@
 \date{\today}
 
 
-\renewcommand\lstlistingname{Fragmento de Código}
-\renewcommand\lstlistlistingname{Fragmentos de Código}
-
 \newenvironment{bottompar}{\par\vspace*{\fill}}{\clearpage}
 
 \begin{document}
+    \renewcommand{\lstlistingname}{Fragmento de Código}
+    \renewcommand{\lstlistlistingname}{Fragmentos de Código}
+    \renewcommand{\listtablename}{Índice de táboas}
+    \renewcommand{\tablename}{Táboa}
+    \renewcommand{\contentsname}{Índice xeral}
 
         \include{001_portada}
 

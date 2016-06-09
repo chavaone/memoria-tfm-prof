@@ -32,8 +32,8 @@
 
 \usepackage{enumitem}% http://ctan.org/pkg/enumitem
 
-\setlist[itemize]{itemsep=0.35em, topsep=0em}
-\setlist[enumerate]{itemsep=0.25em, topsep=0em}
+\setlist[itemize]{itemsep=0.1em, topsep=0em}
+\setlist[enumerate]{itemsep=0.1em, topsep=0em}
 
 \usepackage[nottoc,numbib]{tocbibind}\usepackage{helvet}
 \renewcommand{\familydefault}{\sfdefault}
@@ -48,10 +48,10 @@
 \doublespacing
 \usepackage{geometry}
 \geometry{
-  inner=2.5cm,
+  inner=2.3cm,
   outer=2cm,
-  bottom=2.5cm,
-  top=3cm}
+  bottom=2.4cm,
+  top=2.6cm}
 
 \setlength{\belowcaptionskip}{-5pt}
 
@@ -74,48 +74,6 @@
 \usepackage{multicol}
 \usepackage{multirow}
 
-\usepackage{color}
-\usepackage{xcolor}
-\usepackage{caption}
-\DeclareCaptionFont{white}{\color{white}}
-\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
-\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
-
- \usepackage{listings}
- \usepackage{courier}
- \lstset{
-         basicstyle=\footnotesize\ttfamily, % Standardschrift
-         numberstyle=\tiny,          % Stil der Zeilennummern
-         numbersep=5pt,              % Abstand der Nummern zum Text
-         tabsize=2,                  % Groesse von Tabs
-         extendedchars=true,         %
-         breaklines=true,            % Zeilen werden Umgebrochen
-         keywordstyle=\textbf,
-         frame=b,
-         stringstyle=\textit, % Farbe der String
-         showspaces=false,           % Leerzeichen anzeigen ?
-         showtabs=false,             % Tabs anzeigen ?
-         xleftmargin=17pt,
-         framexleftmargin=17pt,
-         framexrightmargin=5pt,
-         framexbottommargin=4pt,
-         %backgroundcolor=\color{lightgray},
-         showstringspaces=false      % Leerzeichen in Strings anzeigen ?
- }
-
- \lstset{literate=
-  {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
-  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
-  {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
-  {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
-  {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
-  {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
-  {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
-  {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
-  {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
-  {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
-  {€}{{\EUR}}1 {£}{{\pounds}}1
- }
 \usepackage{titlesec}
 
 \titleformat{\chapter}[display]
@@ -125,10 +83,10 @@
   {\titlerule\vspace{0.5ex}\filleft}
   [\vspace{0.5ex}\titlerule]
 
-\titlespacing*{\chapter}{0pt}{0\baselineskip}{1.5\baselineskip}
-\titlespacing*{\section}{0pt}{0.75\baselineskip}{0\baselineskip}
-\titlespacing*{\subsection}{0pt}{0.5\baselineskip}{0\baselineskip}
-\titlespacing*{\subsubsection}{0pt}{0.4\baselineskip}{0\baselineskip}
+\titlespacing*{\chapter}{0pt}{0\baselineskip}{1\baselineskip}
+\titlespacing*{\section}{0pt}{0.5\baselineskip}{0\baselineskip}
+\titlespacing*{\subsection}{0pt}{0.4\baselineskip}{0\baselineskip}
+\titlespacing*{\subsubsection}{0pt}{0.3\baselineskip}{0\baselineskip}
 \titlespacing*{\paragraph}{0pt}{0.15\baselineskip}{0.6\baselineskip}
 
 \usepackage{pdfpages}
@@ -145,56 +103,44 @@
 \setcounter{secnumdepth}{3}
 
 % T?ulo
-\title{Memoria Practicum}
+\title{Traballo de Fin de Mestrado: Unidade Didáctica: "Figuras xeométricas planas. Concepto e propiedades"}
 % Autor
 \author{Marcos Chavarría Teijeiro}
 % Fecha
 \date{\today}
 
-
 \newenvironment{bottompar}{\par\vspace*{\fill}}{\clearpage}
 
 \begin{document}
-    \renewcommand{\lstlistingname}{Fragmento de Código}
-    \renewcommand{\lstlistlistingname}{Fragmentos de Código}
     \renewcommand{\listtablename}{Índice de táboas}
     \renewcommand{\tablename}{Táboa}
     \renewcommand{\contentsname}{Índice xeral}
+    \renewcommand{\bibsection}{\section{\bibname}}
+    \renewcommand{\bibname}{Referencias bibliográficas}
+    \renewcommand{\BBAA}{e}  % between authors in parenthetical cites and ref. list
+    \renewcommand{\BBAB}{e}  % between authors in in-text citation
+    \renewcommand{\BAnd}{e}  % for ``Ed. \& Trans.'' in ref. list
+     \renewcommand{\BOthers}{e cols}
 
         \include{001_portada}
 
   % FRONTMATTER: TOC, LOF, LOT y descripci?/organizaci? de la memoria.
-        \frontmatter
-
-        \thispagestyle{empty}     % No number page, headings...
-
-        \include{003_cc_licence}
-        \thispagestyle{empty}     % No number page, headings...
-
+        %\frontmatter
+        \mainmatter
         \tableofcontents
         \listoffigures
         %\listoftables
 
-
   % MAINMATTER: El contenido, cap?ulo a cap?ulo, de la memoria del PFC.
-        \mainmatter
         \include{010_introducion}
         \include{020_fundamentacion}
         \include{030_desenvolvemento}
         \include{040_valoracioneconclusions}
+        \include{050_bibliografia}
 
-  % INCLUIMOS LOS APÉNDICES...
-        \appendix
-
-  % INCLUIMOS LA BIBLIOGRAFÍA...
-        \nocite{*}  % Se usa para indicar en la bibliograf? las referencias no citadas.
-        \bibliography{mem}
-        \bibliographystyle{apacite}
-
-  % INCLUÍMOS A NORMATIVA
-       \include{normativa}
 
   % ANEXOS
+        \appendix
         \include{A010_fichas}
 
 \end{document}

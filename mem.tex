@@ -48,9 +48,9 @@
 \doublespacing
 \usepackage{geometry}
 \geometry{
-  inner=2.3cm,
-  outer=2cm,
-  bottom=2.4cm,
+  inner=2.4cm,
+  outer=1.8cm,
+  bottom=2.5cm,
   top=2.6cm}
 
 \setlength{\belowcaptionskip}{-5pt}
@@ -127,8 +127,10 @@
   % FRONTMATTER: TOC, LOF, LOT y descripci?/organizaci? de la memoria.
         %\frontmatter
         \mainmatter
-        \tableofcontents
-        \listoffigures
+        %\tableofcontents
+        %\listoffigures
+
+        {\tableofcontents \let\cleardoublepage\clearpage \listoffigures}
         %\listoftables
 
   % MAINMATTER: El contenido, cap?ulo a cap?ulo, de la memoria del PFC.
@@ -142,5 +144,5 @@
   % ANEXOS
         \appendix
         \include{A010_fichas}
-
+        \include{A020_blogue}
 \end{document}
